@@ -71,3 +71,20 @@
 .auth-link:hover {
   text-decoration: underline;
 }
+
+/* ─── Responsive Auth ───────────────────────── */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 28px 20px;
+  }
+
+  .auth-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .auth-container {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+}

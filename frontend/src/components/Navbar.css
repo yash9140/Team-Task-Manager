@@ -120,3 +120,57 @@
   color: var(--danger);
   border-color: rgba(239, 68, 68, 0.3);
 }
+
+/* ─── Responsive Navbar ─────────────────────── */
+@media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    width: calc(100% - 24px);
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .navbar-left {
+    gap: 0;
+  }
+
+  .navbar-logo {
+    font-size: 1rem;
+  }
+
+  .nav-divider {
+    margin: 0 8px;
+  }
+
+  .user-info-left .user-name {
+    font-size: 0.8rem;
+  }
+
+  .navbar-links {
+    gap: 4px;
+  }
+
+  .nav-link span {
+    display: none; /* hide text, show only icons on tablet */
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: calc(100% - 16px);
+    height: 52px;
+    padding: 0 12px;
+  }
+
+  .user-info-left {
+    display: none; /* hide user name/badge — too cramped on small phones */
+  }
+
+  .nav-divider:first-of-type {
+    display: none;
+  }
+}
