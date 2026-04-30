@@ -1,0 +1,17 @@
+{
+  "name": "team-task-manager",
+  "version": "1.0.0",
+  "description": "Full-stack Team Task Manager",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npx nodemon server.js",
+    "client": "cd frontend && npm run dev",
+    "build": "cd frontend && npm install && npm run build",
+    "postinstall": "npm run build && cd backend && npm install"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

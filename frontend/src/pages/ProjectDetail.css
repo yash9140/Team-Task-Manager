@@ -1,0 +1,244 @@
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.kanban-col {
+  padding: 20px;
+  min-height: 500px;
+  background: rgba(20, 20, 30, 0.4); /* Slightly darker for cols */
+}
+
+.col-title {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.col-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kanban-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.kanban-card h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.task-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 12px;
+}
+
+.status-select {
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text-main);
+  border: 1px solid var(--border-glass);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Members Section */
+.members-section {
+  padding: 20px 24px;
+  margin-bottom: 32px;
+}
+
+.members-section h3 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.member-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+}
+
+.member-email {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.remove-member-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.remove-member-btn:hover { color: var(--danger); }
+
+.no-data-sm { color: var(--text-muted); font-size: 0.875rem; }
+
+/* Kanban extra */
+.col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.col-title { font-size: 1.1rem; margin: 0; }
+
+.col-count {
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.kanban-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.kanban-card-header h4 { font-size: 0.95rem; flex: 1; margin-right: 8px; }
+
+.card-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+.icon-btn {
+  background: none;
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover { color: var(--text-main); background: rgba(255,255,255,0.05); }
+.icon-btn.danger:hover { color: var(--danger); border-color: var(--danger); }
+
+.assignees-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.assignee-tag {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+
+.due-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.due-date.overdue {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.col-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 24px 0;
+  border: 1px dashed var(--border-glass);
+  border-radius: 8px;
+}
+
+/* Assign To checkboxes */
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 180px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.15);
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
