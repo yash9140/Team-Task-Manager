@@ -5,7 +5,6 @@ const cors = require('cors');
 const path = require('path');
 
 dotenv.config({ path: path.join(__dirname, '.env') });
-console.log('Loaded MONGO_URI:', process.env.MONGO_URI);
 
 const app = express();
 
@@ -15,9 +14,9 @@ app.use(cors());
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/team-task-manager')
+  .connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
-  .catch((err) => console.log('MongoDB Connection Error:', err));
+  .catch((err) => console.log('MongoDB Connection Error:', err.message));
 
 // API Routes
 app.use('/api/auth', require('./routes/authRoutes'));
@@ -34,7 +33,8 @@ app.use((err, req, res, next) => {
 if (process.env.NODE_ENV === 'production') {
   const frontendPath = path.join(__dirname, '../frontend/dist');
   app.use(express.static(frontendPath));
-  app.get('*', (req, res) => {
+  // Fix: use regex wildcard — bare '*' is rejected by path-to-regexp v8+
+  app.get(/.*/, (req, res) => {
     res.sendFile(path.resolve(frontendPath, 'index.html'));
   });
 }
