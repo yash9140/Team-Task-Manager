@@ -10,8 +10,7 @@ A full-stack web application for managing team projects and tasks with role-base
 
 ## 🌐 Live Demo
 
-> Deployed on Railway: **[Add your Railway URL here after deployment]**
-
+> Deployed on Railway: team-task-manager-production-2913.up.railway.app
 ---
 
 ## ✨ Features
@@ -199,10 +198,33 @@ JWT tokens are attached to every request via an Axios interceptor. The backend m
    The Express server serves the built React app from `frontend/dist` in production.
 
 ---
+## 🚀 Key Highlights
+
+- Implemented role-based access control (Admin/Member) using middleware
+- Designed RESTful APIs with structured request/response handling
+- Built a Kanban-style task board for real-time status tracking
+- Implemented overdue task detection using date comparison logic
+- Deployed full-stack application on Railway with production-ready setup
 
 ## 📸 Screenshots
 
-> Add screenshots of your dashboard, project board, and login page here.
+1. Login Page:
+![alt text](image-1.png)
+
+2. SignUp Page:
+![alt text](image-2.png)
+
+
+1. Admin Dashboard:
+![alt text](image.png)
+
+2. Members Dashboard:
+![alt text](image-3.png)
+
+3. Project Details:
+![alt text](image-4.png)
+
+
 
 ---
 
