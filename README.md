@@ -10,7 +10,10 @@ A full-stack web application for managing team projects and tasks with role-base
 
 ## 🌐 Live Demo
 
-> Deployed on Railway: team-task-manager-production-2913.up.railway.app
+> Deployed on Railway: **[https://team-task-manager-production-2913.up.railway.app](https://team-task-manager-production-2913.up.railway.app)**
+
+> **⚠️ If the link doesn't open:** Go to `chrome://settings/security` → enable **"Use secure DNS"** → select **Google (Public DNS)**. The app will load immediately. This is an ISP DNS issue, not a deployment issue.
+
 ---
 
 ## ✨ Features
